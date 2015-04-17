@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery动画向上弹出二级菜单导航代码 - 【科e互联】</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body class="keBody">
+<div class="kePublic">
+<!--效果html开始-->
+<div class="zzsc">
+<li>
+<a href='http://www.internetke.com/'>首页</a>
+</li>
+<li>
+<a href='http://www.internetke.com/'>网站建设</a>
+<div class="second">
+<a href='http://www.internetke.com/'>网页设计</a>
+<a href='http://www.internetke.com/'>网页制作</a>
+<a href='http://www.internetke.com/'>网站策划</a>
+<a href='http://www.internetke.com/'>空间域名</a>
+</div>
+</li>
+<li>
+<a href='http://www.internetke.com/'>设计分享</a>
+<div class="second">
+<a href='http://www.internetke.com/'>平面设计</a>
+<a href='http://www.internetke.com/'>网页设计</a>
+<a href='http://www.internetke.com/'>专题设计</a>
+</div>
+</li>
+<li>
+<a href='http://www.internetke.com/'>网页特效</a>
+<div class="second">
+<a href='http://www.internetke.com/'>焦点代码</a>
+<a href='http://www.internetke.com/'>相册代码</a>
+<a href='http://www.internetke.com/'>广告代码</a>
+</div>
+</li>
+<li>
+<a href='http://www.internetke.com'>网页模版</a>
+<div class="second">
+<a href='http://www.internetke.com'>企业网站</a>
+<a href='http://www.internetke.com'>电商网站</a>
+<a href='http://www.internetke.com'>政府网站</a>
+<a href='http://www.internetke.com'>教育网站</a>
+</div>
+</li>
+<li>
+<a href='http://www.internetke.com/'>联系我们</a>
+</li>
+<li>
+<a href='http://www.internetke.com/'>网站地图</a>
+</li>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script>
+$(function(){
+	var zzsc = 1; // 默认值为0，二级菜单向下滑动显示；值为1，则二级菜单向上滑动显示
+	if(zzsc ==0){
+		$('.zzsc li').hover(function(){
+			$('.second',this).css('top','30px').show();
+            $('.second',this).effect("size", { to:{width:0, height:0} }, 1200)
+		},function(){
+			$('.second',this).hide();
+		});
+	}else if(zzsc ==1){
+		$('.zzsc li').hover(function(){
+            $('.second',this).show("size", {origin:["bottom","left"]})
+            //$('.second',this).show("fold")
+			$('.second',this).css('bottom','30px').show();
+		},function(){
+			$('.second',this).hide();
+		});
+	}
+});
+</script>
+<!--效果html结束-->
+</body>
+</html>
