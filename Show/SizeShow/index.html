@@ -57,6 +57,16 @@
 <script src="js/jquery-ui.js"></script>
 <script>
 $(function(){
+        var i=-1;
+        var second_length = $('.second').length;
+        $(document).keypress(function(e){
+            $('.second').eq(i%second_length).hide();
+            $('.second').eq((i+1)%second_length).show("size", {origin:["bottom","left"]})
+			$('.second').eq((i+1)%second_length).css('bottom','30px').show();
+        
+            i++
+        });
+        
 	var zzsc = 1; // 默认值为0，二级菜单向下滑动显示；值为1，则二级菜单向上滑动显示
 	if(zzsc ==0){
 		$('.zzsc li').hover(function(){
@@ -68,7 +78,6 @@ $(function(){
 	}else if(zzsc ==1){
 		$('.zzsc li').hover(function(){
             $('.second',this).show("size", {origin:["bottom","left"]})
-            //$('.second',this).show("fold")
 			$('.second',this).css('bottom','30px').show();
 		},function(){
 			$('.second',this).hide();
