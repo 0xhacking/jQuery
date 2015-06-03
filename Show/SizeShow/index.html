@@ -2,16 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuery动画向上弹出二级菜单导航代码 - 【科e互联】</title>
+<title>jQuery动画向上弹出二级菜单导航代码</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
-<body class="keBody">
-<div class="kePublic">
+<body >
+<div >
 <!--效果html开始-->
 <div class="zzsc">
-<li>
-<a href='http://www.internetke.com/'>首页</a>
-</li>
+<ul>
 <li>
 <a href='http://www.internetke.com/'>网站建设</a>
 <div class="second">
@@ -48,10 +46,23 @@
 </li>
 <li>
 <a href='http://www.internetke.com/'>联系我们</a>
+<div class="second">
+<a href='http://www.internetke.com'>企业网站</a>
+<a href='http://www.internetke.com'>电商网站</a>
+<a href='http://www.internetke.com'>政府网站</a>
+<a href='http://www.internetke.com'>教育网站</a>
+</div>
 </li>
 <li>
 <a href='http://www.internetke.com/'>网站地图</a>
+<div class="second">
+<a href='http://www.internetke.com'>企业网站</a>
+<a href='http://www.internetke.com'>电商网站</a>
+<a href='http://www.internetke.com'>政府网站</a>
+<a href='http://www.internetke.com'>教育网站</a>
+</div>
 </li>
+</ul>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui.js"></script>
@@ -63,7 +74,6 @@ $(function(){
             $('.second').eq(i%second_length).hide();
             $('.second').eq((i+1)%second_length).show("size", {origin:["bottom","left"]})
 			$('.second').eq((i+1)%second_length).css('bottom','30px').show();
-        
             i++
         });
         
