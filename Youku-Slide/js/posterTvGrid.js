@@ -36,7 +36,6 @@
 			this.nextNLeft = this.options.width;
 			this.pageNowLeft = (this.options.width-640)/2
 			this.drawContent();
-            $('.thumbs li').eq(this.pageNow-1).addClass('red').fadeIn(1000);
 		},
 		drawContent: function(){
 			this.parent.empty();
@@ -55,6 +54,7 @@
 					bottomItem.setAttribute("ref", i);
 					this.bottomNav.appendChild(bottomItem);
 				}
+                $('.thumbs li').eq(this.pageNow-1).addClass('red').fadeIn(1000);
 				this.content.appendChild(this.bottomNav);
 				this.bannerControls = '<div class="bannerControls"> <div class="leftNav" style="display: block;"></div> <div class="rightNav" style="display: block;"></div> </div>';
 				this.content.innerHTML += this.bannerControls;
