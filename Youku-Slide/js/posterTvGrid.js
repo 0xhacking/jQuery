@@ -110,9 +110,9 @@
 			this.lists = this.parent.find(".contentHolderUnit");
 			var _this = this;
 			this.parent.mouseover(function(){
-				_this.stop();
-				_this.leftNav.show();
-				_this.rightNav.show();
+				//_this.stop();
+				//_this.leftNav.show();
+				//_this.rightNav.show();
 			});
 			this.parent.mouseout(function(){
 				//_this.start();
@@ -124,7 +124,7 @@
     
                     if(e.keyCode==39){
                         _this.turn("right");					 
-                    } else{
+                    } else if(e.keyCode==37){
                         _this.turn("left");					 
                     }
 			});
@@ -208,6 +208,7 @@
 				var page = _this.pageNow + 1;
 				if(page > _this.total) page = 1;
 			}
+
 			_this.turnpage(page, dir);
 		},
 		turnpage: function(page, dir){
@@ -216,11 +217,15 @@
 			_this.locked = true;
 			if(_this.pageNow == page) return false;
 			
+            var slideCount = $('.thumbs li').length;
+
 			var run = function(page, dir, t){
 				var pre = page > 1 ? page -1: _this.total;
 				var next = page == _this.total ? 1 : page + 1;
 				var preP = pre - 1 >= 1 ? pre-1 : _this.total;
 				var nextN = next + 1 > _this.total ? 1 : next+1;
+                $('.thumbs li').removeClass('red');
+                $('.thumbs li').eq(page-1).addClass('red').fadeIn(1000);
 				if(pre != _this.pageNow && next != _this.pageNow){
 					var nowpre = _this.pageNow > 1 ? _this.pageNow -1: _this.total;
 					var nownext = _this.pageNow == _this.total ? 1 : _this.pageNow + 1;

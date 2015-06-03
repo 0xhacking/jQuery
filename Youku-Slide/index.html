@@ -10,7 +10,6 @@
 <script language="javascript" type="text/javascript" src="js/posterTvGrid.js"></script>
 <style>
 body{background-color:#c00}
-
 </style>
 <center><div id="posterTvGrid86804"></div></center>
 
@@ -34,47 +33,44 @@ var posterTvGrid86804 = new posterTvGrid(
 );
 
 $(document).ready(function(){
-
-
-    /** Main Slider **/
-    var timer;
+//
+//
+//    /** Main Slider **/
+//    var timer;
     var slideCount = $('.thumbs li').length;
-    var currSlide = $('.thumbs li').filter('.curr').index();
-    var nextSlide = currSlide + 1;
+//    var currSlide = $('.thumbs li').filter('.curr').index();
+//    var nextSlide = currSlide + 1;
     var fadeSpeed = 1000;
     $(".thumbs li").css("width", $(window).width()/(slideCount+1)+"px")
-	
+//	
+//
+        //currSlide=0;
+        //$('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
+ //   $('body').keydown(function (e) {
+ //       var keyCode = e.keyCode;
 
-        currSlide=0;
-    $('body').keydown(function (e) {
-        var keyCode = e.keyCode;
+ //       if(keyCode==39) {
 
-        if(keyCode==39) {
+ //           currSlide = currSlide + 1 < slideCount ? slideCount-1 : 0;
+ //           console.log(currSlide);
 
-            currSlide = currSlide + 1 < slideCount ? currSlide + 1 : 0;
+ //           $('.thumbs li').removeClass('red');
 
-            //$('.slide-item').fadeOut(fadeSpeed);
-            $('.thumbs li').removeClass('red');
+ //           $('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
 
-            //$('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
-            $('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
+ //   } else if(keyCode==37){
+ //   
+ //           currSlide = currSlide - 1 < 0 ? slideCount-1 : currSlide - 1;
 
-    } else {
-    
-            currSlide = currSlide - 1 < 0 ? slideCount-1 : currSlide - 1;
-            console.log(currSlide);
+ //           $('.thumbs li').removeClass('red');
 
-            //$('.slide-item').fadeOut(fadeSpeed);
-            $('.thumbs li').removeClass('red');
-
-           // $('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
-            $('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
-    
-    
-    }
+ //           $('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
+ //   
+ //   
+ //   }
 
 
-    });
+ //   });
 
 });
 </script>
