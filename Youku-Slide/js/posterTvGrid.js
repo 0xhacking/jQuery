@@ -36,6 +36,7 @@
 			this.nextNLeft = this.options.width;
 			this.pageNowLeft = (this.options.width-640)/2
 			this.drawContent();
+            $('.thumbs li').eq(this.pageNow-1).addClass('red').fadeIn(1000);
 		},
 		drawContent: function(){
 			this.parent.empty();
