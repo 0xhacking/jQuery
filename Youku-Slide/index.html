@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="zh-CN"/>
+<title>优酷电视剧频道jQuery焦点图 - 站长素材</title>
+<link type="text/css" rel="stylesheet" href="css/posterTvGrid.css">
+<link type="text/css" rel="stylesheet" href="css/lanrenzhijia.css">
+<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/posterTvGrid.js"></script>
+<style>
+body{background-color:#c00}
+
+</style>
+<center><div id="posterTvGrid86804"></div></center>
+
+ <ul class="thumbs clearfix">
+    <li class="thumb1 curr"> <div><em></em><span>1</span></div> </li>
+    <li class="thumb2"> <div><em></em><span>2</span></div> </li>
+    <li class="thumb3"> <div><em></em><span>3</span></div> </li>
+    <li class="thumb4"> <div><em></em><span>4</span></div> </li>
+    <li class="thumb5"> <div><em></em><span>5</span></div> </li>
+    <li class="thumb6"> <div><em></em><span>6</span></div> </li>
+    <li class="thumb7"> <div><em></em><span>7</span></div> </li>
+    <li class="thumb8"> <div><em></em><span>8</span></div> </li>
+    <li class="thumb9"> <div><em></em><span>9</span></div> </li>
+  </ul>
+
+<script type="text/javascript">
+var posterTvGrid86804 = new posterTvGrid(
+'posterTvGrid86804',
+{className: "posterTvGrid"},
+[{"img":"images\/0510000052C4D8386714C0314E07D347.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/0510000052C4DA596714C0318D0856B8.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/0510000052B3F93E6714C031680C0ED1.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/05100000523FEFF56714C00E5C08C4C6.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/05100000528F28356714C0318609779F.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/0510000052B8F2896714C031F4094DE4.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/05100000529409176714C03134023DB3.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/0510000052B108766714C031B70E65E6.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"},{"img":"images\/051000005258B54A6714C00F0903829E.jpg","title":"chinaz","url":"http:\/\/sc.chinaz.com\/"}]
+);
+
+$(document).ready(function(){
+
+
+    /** Main Slider **/
+    var timer;
+    var slideCount = $('.thumbs li').length;
+    var currSlide = $('.thumbs li').filter('.curr').index();
+    var nextSlide = currSlide + 1;
+    var fadeSpeed = 1000;
+    $(".thumbs li").css("width", $(window).width()/(slideCount+1)+"px")
+	
+
+        currSlide=0;
+    $('body').keydown(function (e) {
+        var keyCode = e.keyCode;
+
+        if(keyCode==39) {
+
+            currSlide = currSlide + 1 < slideCount ? currSlide + 1 : 0;
+
+            //$('.slide-item').fadeOut(fadeSpeed);
+            $('.thumbs li').removeClass('red');
+
+            //$('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
+            $('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
+
+    } else {
+    
+            currSlide = currSlide - 1 < 0 ? slideCount-1 : currSlide - 1;
+            console.log(currSlide);
+
+            //$('.slide-item').fadeOut(fadeSpeed);
+            $('.thumbs li').removeClass('red');
+
+           // $('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
+            $('.thumbs li').eq(currSlide).addClass('red').fadeIn(fadeSpeed);
+    
+    
+    }
+
+
+    });
+
+});
+</script>
+</div>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>
