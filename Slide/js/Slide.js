@@ -17,21 +17,33 @@ $(document).ready(function(){
 
             currSlide = currSlide + 1 < slideCount ? currSlide + 1 : 0;
 
-            $('.slide-item').fadeOut(fadeSpeed);
             $('.slide-item, .thumbs li').removeClass('curr');
 
-            $('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
+            var offset  =($(".slide-item").eq(currSlide).width())*-1
+$(".slide-item").animate({
+			left: offset
+		}, "slow", function() {
+            console.log(currSlide);
+            $('.slide-item').eq(currSlide).addClass('curr').css("left","0px").fadeIn(fadeSpeed);
+		})
             $('.thumbs li').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
 
     } else {
     
             currSlide = currSlide - 1 < 0 ? slideCount-1 : currSlide - 1;
-            console.log(currSlide);
 
             $('.slide-item').fadeOut(fadeSpeed);
+            //$('.slide-item').hide();
             $('.slide-item, .thumbs li').removeClass('curr');
 
-            $('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
+            var offset  = ($(".slide-item").eq(currSlide).width()) * -1
+            $('.slide-item').eq(currSlide).addClass('curr').css("left",offset).fadeIn(fadeSpeed);
+$(".slide-item").animate({
+            left:"0px",
+		}, "slow", function() {
+           // console.log(currSlide);
+		})
+            //$('.slide-item').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
             $('.thumbs li').eq(currSlide).addClass('curr').fadeIn(fadeSpeed);
     
     
