@@ -1,0 +1,27 @@
+﻿/*
+Version: 2.2
+Author: tanglin
+Download by http://www.jb51.net
+*/
+/*====布局===========================================================================================*/
+.layout{ width:960px;margin:0 auto}
+.ColLeft{ width:190px; background:#fff;padding:5px}
+.ColRight{width:740px;background:#fff;padding:5px}
+.ColCenter{width:530px}
+.SideBar{ width:200px}
+.extra{ width:300px;}
+/*====产品目录=====================================================================================================*/
+.CategoryTree{ background-color:#f2f2f2; color:#666; /*border:2px #4ca7b8 solid;*/}
+.CategoryTree .titlebar{height:30px;line-height:30px; background:#4ca7b8}
+.CategoryTree .titlebar h3{ padding-left:15px; color:#fff}
+.CategoryTree ul{ padding:10px 0}
+.CategoryTree ul li{height:26px;line-height:26px; padding:0 10px; position:relative;vertical-align:middle; cursor:pointer;display:block}
+.CategoryTree ul li a{color:#666}
+.CategoryTree ul li.selected a{text-decoration:none}
+.CategoryTree ul li .tit{border-bottom:1px #e4e4e4 solid;display:block;}
+.CategoryTree ul li ul{position:absolute;width:110px;background:#fff;left:178px;top:0px;display:none}
+.CategoryTree ul li ul{  padding:0 10px;}
+.CategoryTree ul li ul li a{color:#666; text-decoration:none;}
+.CategoryTree ul li ul li {border-bottom:1px solid #f2f2f2}
+.CategoryTree ul li.selected{z-index:99; position:relative;border-left:2px solid #42b250; background:#fff; }
+.CategoryTree ul li.selected .h2-tit{position:absolute; z-index:88;  border-right:0;width:170px;height:24px;line-height:24px; padding-left:2px;margin-left:-4px}
